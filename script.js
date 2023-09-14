@@ -13,7 +13,7 @@ fetch('https://random-word-api.herokuapp.com/word?length=5&&number=1&&lang=es')
     })
     .catch(err => console.error(err));
 
-console.log(palabra);
+//console.log(palabra);
 let intentos = 6;
 
 window.addEventListener('load', init);
@@ -29,7 +29,7 @@ button.addEventListener("click", intentar);
 function intentar(){
     console.log(palabra);
    const INTENTO = leerIntento();
-   const GRID = document.createElement ("grid");
+   const GRID = document.getElementById("grid");
    const ROW = document.createElement('div');
    ROW.className = 'row';
 
@@ -44,6 +44,7 @@ function intentar(){
     return
    }
    for (let i in palabra){
+    console.log(INTENTO[i])
     const SPAN = document.createElement('span');
     SPAN.className = 'letter';
     if (INTENTO[i] === palabra[i]){
@@ -86,5 +87,5 @@ function terminar(mensaje){
     contenedor.innerHTML = mensaje;
 }
 
-const input = document.getElementById("guess-input");
-const valor = input.value;
+//const input = document.getElementById("guess-input");
+//const valor = input.value;
